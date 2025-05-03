@@ -42,26 +42,11 @@ Run the installer script which will set up all required environments and depende
 installer.bat
 
 # On macOS/Linux
+add '#! bin/bash' to the top of the installer.bat file
+rename it or save it as : installer.sh
 chmod +x installer.sh
 ./installer.sh
 ```
-
-### Manual Installation
-
-1. **Install Node.js dependencies**:
-   ```bash
-   npm install
-   ```
-
-2. **Set up Python environments**:
-   ```bash
-   # On Windows
-   setup_all_environments.bat
-   
-   # On macOS/Linux
-   chmod +x setup_all_environments.sh
-   ./setup_all_environments.sh
-   ```
 
 ## 🚀 Usage
 
@@ -71,7 +56,10 @@ chmod +x installer.sh
    main.bat
    
    # On macOS/Linux
-   ./main.sh
+   add '#! bin/bash' to the top of the CLEM.bat file
+   rename or save the file as '.sh' : CLEM.sh
+   chmod +x CLEM.sh
+   ./CLEM.sh
    ```
 
 2. From the main interface, select the application you want to run
