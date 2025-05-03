@@ -1,0 +1,12 @@
+{
+    "name": "boyka",
+    "age": 42,
+    "gender": "Male",
+    "occupation": "fighter",
+    "nationality": "russian",
+    "status": "WANTED",
+    "threat_level": "HIGH",
+    "last_seen": "2025-05-01 22:22:47",
+    "notes": "none",
+    "sightings": 1850
+}

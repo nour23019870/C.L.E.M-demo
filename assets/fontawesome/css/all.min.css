@@ -1,0 +1,24 @@
+/* Simplified Font Awesome replacement */
+
+.fas {
+  font-family: sans-serif;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
+
+/* Basic icon replacements using Unicode symbols */
+.fa-minus:before { content: "−"; }
+.fa-expand:before { content: "⤢"; }
+.fa-times:before { content: "×"; }
+.fa-search:before { content: "🔍"; }
+.fa-th:before { content: "▦"; }
+.fa-list:before { content: "☰"; }
+.fa-arrow-left:before { content: "←"; }
+.fa-circle:before { content: "●"; }
+.fa-check-circle:before { content: "✓"; }
+.fa-exclamation-triangle:before { content: "⚠"; }
+.fa-times-circle:before { content: "⊗"; }
+.fa-info-circle:before { content: "ℹ"; }

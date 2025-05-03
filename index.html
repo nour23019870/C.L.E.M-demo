@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CLEM - Computer Vision & Media Assistant</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+</head>
+<body>
+  <!-- Animated background -->
+  <div class="background">
+    <div class="gradient"></div>
+    <div class="grid"></div>
+  </div>
+  
+  <!-- Title bar -->
+  <div class="title-bar">
+    <div class="window-title">CLEM - Advanced Computer Vision & Media Assistant</div>
+    <div class="window-controls">
+      <button id="minimizeBtn" class="control-btn">
+        <i class="fas fa-minus"></i>
+      </button>
+      <button id="maximizeBtn" class="control-btn">
+        <i class="fas fa-expand"></i>
+      </button>
+      <button id="closeBtn" class="control-btn">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main interface -->
+  <div class="container">
+    <div class="app-layout">
+      <!-- Sidebar navigation -->
+      <aside class="sidebar">
+        <div class="logo">
+          <img src="assets/icons/logo.png" alt="CLEM Logo">
+          <h2>CLEM</h2>
+        </div>
+        <nav class="main-nav">
+          <ul>
+            <li class="nav-item active" data-section="dashboard">
+              <i class="fas fa-home"></i>
+              <span>Dashboard</span>
+            </li>
+            <li class="nav-item" data-section="vision">
+              <i class="fas fa-eye"></i>
+              <span>Vision</span>
+            </li>
+            <li class="nav-item" data-section="gestures">
+              <i class="fas fa-hand-paper"></i>
+              <span>Gestures</span>
+            </li>
+            <li class="nav-item" data-section="media">
+              <i class="fas fa-photo-video"></i>
+              <span>Media</span>
+            </li>
+            <li class="nav-item" data-section="utils">
+              <i class="fas fa-tools"></i>
+              <span>Utilities</span>
+            </li>
+            <li class="nav-item" data-section="settings">
+              <i class="fas fa-cog"></i>
+              <span>Settings</span>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Main content area -->
+      <main class="content">
+        <!-- Loading indicator -->
+        <div class="loading-container" id="loadingIndicator">
+          <div class="futuristic-spinner">
+            <div class="spinner-ring"></div>
+            <div class="spinner-ring"></div>
+            <div class="spinner-text">Initializing System</div>
+          </div>
+          <div class="progress-container">
+            <div class="progress-bar" id="initProgressBar"></div>
+          </div>
+          <div class="status-messages" id="statusMessages"></div>
+        </div>
+
+        <!-- Dashboard Section -->
+        <section class="content-section active" id="dashboard-section">
+          <h2>Welcome to CLEM</h2>
+          <div class="dashboard-stats">
+            <div class="stat-card">
+              <i class="fas fa-microchip"></i>
+              <div class="stat-content">
+                <h3>System Status</h3>
+                <p id="systemStatusValue">Operational</p>
+              </div>
+            </div>
+            <div class="stat-card">
+              <i class="fas fa-brain"></i>
+              <div class="stat-content">
+                <h3>AI Models</h3>
+                <p id="modelsLoadedValue">11 loaded</p>
+              </div>
+            </div>
+            <div class="stat-card">
+              <i class="fas fa-camera"></i>
+              <div class="stat-content">
+                <h3>Camera</h3>
+                <p id="cameraStatusValue">Available</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="recent-activities">
+            <h3>Recent Activities</h3>
+            <div class="activity-list" id="recentActivitiesList">
+              <!-- Will be populated dynamically -->
+            </div>
+          </div>
+
+          <div class="quick-actions">
+            <h3>Quick Actions</h3>
+            <div class="action-buttons">
+              <button class="action-btn" data-feature="face-reco">
+                <i class="fas fa-user-check"></i>
+                <span>Face Recognition</span>
+              </button>
+              <button class="action-btn" data-feature="emotions">
+                <i class="fas fa-smile"></i>
+                <span>Emotion Detection</span>
+              </button>
+              <button class="action-btn" data-feature="SignLang">
+                <i class="fas fa-sign-language"></i>
+                <span>ASL Translator</span>
+              </button>
+              <button class="action-btn" data-feature="item-detection">
+                <i class="fas fa-box"></i>
+                <span>Object Detection</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Vision Section -->
+        <section class="content-section" id="vision-section">
+          <h2>Computer Vision</h2>
+          <div class="feature-cards">
+            <div class="feature-card" data-feature="face-reco">
+              <div class="feature-icon">
+                <i class="fas fa-user-check"></i>
+              </div>
+              <div class="feature-info">
+                <h3>Face Recognition</h3>
+                <p>Identifies and recognizes faces in real-time.</p>
+                <button class="feature-btn">Activate</button>
+              </div>
+            </div>
+            <div class="feature-card" data-feature="emotions">
+              <div class="feature-icon">
+                <i class="fas fa-smile"></i>
+              </div>
+              <div class="feature-info">
+                <h3>Emotion Recognition</h3>
+                <p>Detects emotions from facial expressions.</p>
+                <button class="feature-btn">Activate</button>
+              </div>
+            </div>
+            <div class="feature-card" data-feature="analyse">
+              <div class="feature-icon">
+                <i class="fas fa-search-plus"></i>
+              </div>
+              <div class="feature-info">
+                <h3>Facial Analysis</h3>
+                <p>Advanced facial tracking and analysis.</p>
+                <button class="feature-btn">Activate</button>
+              </div>
+            </div>
+            <div class="feature-card" data-feature="item-detection">
+              <div class="feature-icon">
+                <i class="fas fa-box"></i>
+              </div>
+              <div class="feature-info">
+                <h3>Object Detection</h3>
+                <p>Detects and identifies objects in view.</p>
+                <button class="feature-btn">Activate</button>
+              </div>
+            </div>
+            <div class="feature-card" data-feature="health-report">
+              <div class="feature-icon">
+                <i class="fas fa-heartbeat"></i>
+              </div>
+              <div class="feature-info">
+                <h3>Health Reports</h3>
+                <p>View facial analysis health reports.</p>
+                <button class="feature-btn">View Reports</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Gestures Section -->
+        <section class="content-section" id="gestures-section">
+          <h2>Gesture Controls</h2>
+          <div class="feature-cards">
+            <div class="feature-card" data-feature="SignLang">
+              <div class="feature-icon">
+                <i class="fas fa-sign-language"></i>
+              </div>
+              <div class="feature-info">
+                <h3>ASL Translator</h3>
+                <p>Translate sign language gestures in real-time.</p>
+                <button class="feature-btn">Activate</button>
+              </div>
+            </div>
+            <div class="feature-card" data-feature="air-writing">
+              <div class="feature-icon">
+                <i class="fas fa-pencil-alt"></i>
+              </div>
+              <div class="feature-info">
+                <h3>Air Writing</h3>
+                <p>Draw in the air using hand gestures.</p>
+                <button class="feature-btn">Activate</button>
+              </div>
+            </div>
+            <div class="feature-card" data-feature="media-control">
+              <div class="feature-icon">
+                <i class="fas fa-music"></i>
+              </div>
+              <div class="feature-info">
+                <h3>Media Controls</h3>
+                <p>Control media playback with hand gestures.</p>
+                <button class="feature-btn">Activate</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Media Section -->
+        <section class="content-section" id="media-section">
+          <h2>Media Management</h2>
+          <div class="feature-cards">
+            <div class="feature-card" data-feature="youtube-download">
+              <div class="feature-icon">
+                <i class="fab fa-youtube"></i>
+              </div>
+              <div class="feature-info">
+                <h3>YouTube Downloader</h3>
+                <p>Download videos from YouTube.</p>
+                <button class="feature-btn">Open</button>
+              </div>
+            </div>
+            <div class="feature-card" data-feature="music-download">
+              <div class="feature-icon">
+                <i class="fas fa-music"></i>
+              </div>
+              <div class="feature-info">
+                <h3>Music Downloader</h3>
+                <p>Download music from various sources.</p>
+                <button class="feature-btn">Open</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Utilities Section -->
+        <section class="content-section" id="utils-section">
+          <h2>Utilities</h2>
+          <div class="feature-cards">
+            <div class="feature-card" data-feature="phone-info">
+              <div class="feature-icon">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <div class="feature-info">
+                <h3>Phone Info</h3>
+                <p>Extract and display phone information.</p>
+                <button class="feature-btn">Open</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Settings Section -->
+        <section class="content-section" id="settings-section">
+          <h2>Settings</h2>
+          <div class="settings-container">
+            <div class="settings-group">
+              <h3>General Settings</h3>
+              <div class="setting-item">
+                <label for="darkModeToggle">Dark Mode</label>
+                <div class="toggle-switch">
+                  <input type="checkbox" id="darkModeToggle" checked>
+                  <span class="toggle-slider"></span>
+                </div>
+              </div>
+              <div class="setting-item">
+                <label for="notificationsToggle">Notifications</label>
+                <div class="toggle-switch">
+                  <input type="checkbox" id="notificationsToggle" checked>
+                  <span class="toggle-slider"></span>
+                </div>
+              </div>
+            </div>
+            <div class="settings-group">
+              <h3>Camera Settings</h3>
+              <div class="setting-item">
+                <label for="cameraSelect">Camera Source</label>
+                <select id="cameraSelect">
+                  <option value="0">Default Camera</option>
+                </select>
+              </div>
+              <div class="setting-item">
+                <label for="resolutionSelect">Resolution</label>
+                <select id="resolutionSelect">
+                  <option value="720p">720p</option>
+                  <option value="1080p">1080p</option>
+                  <option value="480p">480p</option>
+                </select>
+              </div>
+            </div>
+            <div class="settings-group">
+              <h3>AI Model Settings</h3>
+              <div class="setting-item">
+                <label for="modelPrecisionSelect">Model Precision</label>
+                <select id="modelPrecisionSelect">
+                  <option value="standard">Standard</option>
+                  <option value="high">High (More Resources)</option>
+                  <option value="low">Low (Faster)</option>
+                </select>
+              </div>
+            </div>
+            <div class="settings-group">
+              <h3>About</h3>
+              <div class="about-info">
+                <p>CLEM - Computer Vision & Media Assistant</p>
+                <p>Version: 2.0.0</p>
+                <p>&copy; 2025 CLEM Team</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Feature viewer panel (where the app content will be displayed) -->
+        <div class="feature-viewer" id="featureViewer">
+          <div class="feature-header">
+            <button class="close-feature-btn" id="closeFeatureBtn">
+              <i class="fas fa-times"></i>
+            </button>
+            <h2 id="featureTitle">Feature Title</h2>
+          </div>
+          <div class="feature-content" id="featureContent">
+            <!-- Feature content will be loaded here -->
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Status Bar -->
+    <footer>
+      <div class="status-bar">
+        <div class="system-status">
+          <i class="fas fa-circle"></i>
+          <span id="systemStatus">All systems operational</span>
+        </div>
+        <div class="cpu-status">
+          <i class="fas fa-microchip"></i>
+          <span id="cpuStatus">CPU: 2%</span>
+        </div>
+        <div class="memory-status">
+          <i class="fas fa-memory"></i>
+          <span id="memoryStatus">Memory: 512MB</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Notification area -->
+  <div class="notification-area" id="notificationArea"></div>
+
+  <!-- Toast notification template -->
+  <template id="toastTemplate">
+    <div class="toast-notification">
+      <div class="toast-icon"></div>
+      <div class="toast-content">
+        <div class="toast-title"></div>
+        <div class="toast-message"></div>
+      </div>
+      <button class="toast-close">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  </template>
+
+  <!-- Script references -->
+  <script src="scripts/renderer.js"></script>
+</body>
+</html>

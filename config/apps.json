@@ -1,0 +1,125 @@
+{
+  "apps": [
+    {
+      "id": "air-writing",
+      "name": "Air Writing",
+      "description": "Draw in the air using hand gestures",
+      "category": "Computer Vision",
+      "icon": "assets/icons/app-icons/air-writing.png",
+      "color": "#3498db",
+      "scriptPath": "python-apps/air-writing",
+      "mainScript": "main.py",
+      "pythonPath": "python-apps/media_control/env/Scripts/python.exe"
+    },
+    {
+      "id": "SignLang",
+      "name": "ASL Translator",
+      "description": "Translate als language live",
+      "category": "Computer Vision",
+      "icon": "assets/icons/app-icons/asl.png",
+      "color": "#3498db",
+      "scriptPath": "python-apps/signLang",
+      "mainScript": "main.py",
+      "pythonPath": "python-apps/signLang/env/Scripts/python.exe"
+    },
+    {
+      "id": "analyse",
+      "name": "Facial Analysis",
+      "description": "Advanced facial analysis and tracking",
+      "category": "Computer Vision",
+      "icon": "assets/icons/app-icons/analyse.png",
+      "color": "#2ecc71",
+      "scriptPath": "python-apps/analyse",
+      "mainScript": "src/main.py",
+      "pythonPath": "env/Scripts/python.exe"
+    },
+    {
+      "id": "health-report",
+      "name": "health report",
+      "description": "check your facial analysis report",
+      "category": "Computer Vision",
+      "icon": "assets/icons/app-icons/analyse.png",
+      "color": "#2ecc71",
+      "scriptPath": "python-apps/analyse",
+      "mainScript": "src/view_results.py",
+      "pythonPath": "env/Scripts/python.exe"
+    },
+    {
+      "id": "emotions",
+      "name": "Emotion Recognition",
+      "description": "Recognizes emotions from facial expressions",
+      "category": "Computer Vision",
+      "icon": "assets/icons/app-icons/emotions.jpg",
+      "color": "#9b59b6",
+      "scriptPath": "python-apps/emotions",
+      "mainScript": "main.py",
+      "pythonPath": "python-apps/emotions/env/Scripts/python.exe"
+    },
+    {
+      "id": "face-reco",
+      "name": "Face Recognition",
+      "description": "Identifies and recognizes faces",
+      "category": "Computer Vision",
+      "icon": "assets/icons/app-icons/faceReco.jpeg",
+      "color": "#e74c3c",
+      "scriptPath": "python-apps/face_reco",
+      "mainScript": "main.py",
+      "pythonPath": "env/Scripts/python.exe"
+    },
+    {
+      "id": "item-detection",
+      "name": "Item Detection",
+      "description": "Detects and identifies objects",
+      "category": "Computer Vision",
+      "icon": "assets/icons/app-icons/item.png",
+      "color": "#f39c12",
+      "scriptPath": "python-apps/item-detection",
+      "mainScript": "main.py",
+      "pythonPath": "env/Scripts/python.exe"
+    },
+    {
+      "id": "media-control",
+      "name": "Media Control",
+      "description": "Control media playback with gestures",
+      "category": "Utilities",
+      "icon": "assets/icons/app-icons/media.png",
+      "color": "#16a085",
+      "scriptPath": "python-apps/media_control",
+      "mainScript": "main.py",
+      "pythonPath": "python-apps/media_control/env/Scripts/python.exe"
+    },
+    {
+      "id": "music-download",
+      "name": "Music Downloader",
+      "description": "Download music from various sources",
+      "category": "Multimedia",
+      "icon": "assets/icons/app-icons/music.jpg", 
+      "color": "#8e44ad",
+      "scriptPath": "python-apps/music_download",
+      "mainScript": "main.py",
+      "pythonPath": "env/Scripts/python.exe"
+    },
+    {
+      "id": "phone-info",
+      "name": "Phone Info",
+      "description": "Extract and display phone information",
+      "category": "Utilities",
+      "icon": "assets/icons/app-icons/phone.jpg",
+      "color": "#d35400",
+      "scriptPath": "python-apps/phoneInfo",
+      "mainScript": "main.py",
+      "pythonPath": "env/Scripts/python.exe"
+    },
+    {
+      "id": "youtube-download",
+      "name": "YouTube Downloader",
+      "description": "Download videos from YouTube",
+      "category": "Multimedia",
+      "icon": "assets/icons/app-icons/video.jpg",
+      "color": "#27ae60",
+      "scriptPath": "python-apps/youtube_download",
+      "mainScript": "main.py",
+      "pythonPath": "env/Scripts/python.exe"
+    }
+  ]
+}

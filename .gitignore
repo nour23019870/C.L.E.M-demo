@@ -1,0 +1,101 @@
+# CLEM Project .gitignore
+
+# Python compilation and cache files
+__pycache__/
+*.pyc
+*$py.class
+*.so
+
+# Virtual environments (anywhere in the project)
+**/env/
+**/venv/
+**/.venv/
+**/ENV/
+
+# Python310 folder
+Python310/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+.vs/
+*.sublime-workspace
+*.sublime-project
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Project specific
+*.log
+*.sql
+*.sqlite
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Node.js / Electron
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Datasets
+**/datasets/
+**/data/
+**/raw_data/
+**/processed_data/
+**/training_data/
+**/testing_data/
+**/validation_data/
+**/annotations/
+
+# Temporary and large data files
+temp/
+.tmp/
+cache/
+
+# Large model files (except the essential ones)
+**/*.pt
+**/*.pth
+**/*.caffemodel
+**/*.weights
+**/*.onnx
+**/*.pb
+!yolov5s.pt
+!res10_300x300_ssd_iter_140000.caffemodel
+!openface_nn4.small2.v1.t7
+
+# Make sure we include all necessary model files in python-apps
+!python-apps/**/*.pt
+!python-apps/**/*.pth
+!python-apps/**/*.h5
+!python-apps/**/*.caffemodel
+!python-apps/**/*.weights
+!python-apps/**/*.onnx
+!python-apps/**/*.pb
+!python-apps/**/*.tflite
+!python-apps/**/*.model
+!python-apps/**/*.dll
+!python-apps/**/*.so
+!python-apps/**/*.prototxt
+
+# Make sure important app directories are included
+!python-apps/**/dataset/**
+!python-apps/**/encodings/**
+!python-apps/**/img/**
+!python-apps/**/output/**
+!python-apps/**/models/**
+

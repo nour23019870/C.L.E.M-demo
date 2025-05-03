@@ -1,0 +1,21 @@
+{
+    "name": "clem",
+    "version": "1.0.0",
+    "description": "Futuristic launcher for Python applications",
+    "main": "main.js",
+    "scripts": {
+      "start": "electron . --enable-logging=false",
+      "start-dev": "electron .",
+      "create-exe": "nexe main.js -o CLEM.exe"
+    },
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "electron": "^24.0.0"
+    },
+    "dependencies": {
+        "electron-store": "^8.1.0",
+        "node-hide-console-window": "^2.2.0",
+        "python-shell": "^5.0.0"
+    }
+}
