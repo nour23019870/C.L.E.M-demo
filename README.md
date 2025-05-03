@@ -53,7 +53,7 @@ chmod +x installer.sh
 1. Launch CLEM:
    ```bash
    # On Windows
-   main.bat
+   CLEM.bat
    
    # On macOS/Linux
    add '#! bin/bash' to the top of the CLEM.bat file
