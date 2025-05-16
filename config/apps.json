@@ -67,6 +67,17 @@
       "pythonPath": "env/Scripts/python.exe"
     },
     {
+      "id": "face-scanner",
+      "name": "Face Scanner",
+      "description": "Add new faces to the recognition database",
+      "category": "Computer Vision",
+      "icon": "assets/icons/app-icons/faceReco.jpeg",
+      "color": "#e74c3c",
+      "scriptPath": "python-apps/face_reco",
+      "mainScript": "face_scanner.py",
+      "pythonPath": "env/Scripts/python.exe"
+    },
+    {
       "id": "item-detection",
       "name": "Item Detection",
       "description": "Detects and identifies objects",
